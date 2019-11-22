@@ -121,7 +121,7 @@ Another example of a good description of a dataset can be found [here](https://w
 
 > We will be visualizing a data set of the number of deaths by risk factors of 196 countries from 1990 to 2017. The data has 6468 rows and 30 columns including the `country name`, `country code`, `year` and factors (e.g. `Unsafe water source (deaths)`, `Low birth weight (deaths)`, `Smoking (deaths)`, `High blood pressure (deaths)`, `Obesity (deaths)`, `Air pollution (outdoor & indoor) (deaths)` etc). 
 
-(p.s. Data got approved by Firas :) The data was published by "Global Burden of Disease Collaborative Network. Global Burden of Disease Study 2017 (GBD 2017) Results. Seattle, United States: Institute for Health Metrics and Evaluation (IHME), 2018". It could be downloaded [here](https://ourworldindata.org/air-pollution).) 
+(p.s. Data got approved by Firas. The data was published by "Global Burden of Disease Collaborative Network. Global Burden of Disease Study 2017 (GBD 2017) Results. Seattle, United States: Institute for Health Metrics and Evaluation (IHME), 2018". It could be downloaded [here](https://ourworldindata.org/air-pollution).) 
 
 ### Section 3: Research questions and usage scenarios
 
@@ -165,6 +165,10 @@ The sketch should be posted in the `README.md` file of your GitHub.com repositor
 Example description
 
 > The app contains a landing page that shows the distribution (depending on data type, bar chart, density chart etc) of dataset factors (hypertension, physical disabilities etc.) coloured coded according to whether patients showed up or didn't show up for an appointment. From a dropdown list, users can filter out variables from the distribution display, by patient demographics (i.e. only show female patients), by appointment data (i.e. if SMS was sent), and finally by the date range of appointments. A different dropdown menu will allow users to re-order variables according to the probability of patients being a no-show or in alphabetical order to comorbidities. Users can compare the distribution of co-morbidities by scrolling down through the app interface.
+
+> The app contains a page with three tabs. The landing page would display the first tab. The first tab shows a bar chart, which contains the total number of deaths by different risk factors in 2017. The bars will display horizontally in descending order.
+If we click on the second tab, there is a heated world map which shows the death rates by the top risk factor among different countries in 2017. A tooltip appears with more specific information (country name, the exact death rate by certain risk factor of the country) when the cursor points on different places on the map. There is a drop down button on the top. From the dropdown list, users can choose a different risk factor (out of the top 5 risk factors of death) to see the death rates of that specific factor across the world.
+When clicking the third tab, there is a line chart that shows the trend of the top risk factor of deaths over years across continents. The line chart will be color coded. There is a radio button that we can click on to choose a different risk factor (out of the top 5 risk factors of death) and see its trend on each continent.
 
 **Example sketch**
 
