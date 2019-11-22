@@ -1,11 +1,12 @@
 # Proposal
 
 ## Section 1: Motivation and Purpose
-
+> The root causes of deaths in many parts of the world have been an alarming case that got the attention of many international organizations. Such death-causing factors are many but the majority of those that lead to prevalent deaths include smoking, high blood pressure, obesity, high blood sugar, air pollution, among others. Hence, it is essential to figure out which of these factors leads to the highest death rate in every country and across continents. This is a tremendous challenge for decision-makers in the health sector whether it is governments or non-governmental organizations. To address this critical situation, we will design a dashboard application that uses accurate data that was obtained from the Global Burden of Disease Collaborative Network, USA. The app will show the proportions of deaths caused by each of the risk factors outlined above. It will also interactively show the number of deaths caused by these risk factors across countries in the world in a geographic heatmap. Furthermore, the app will allow users to see the trend (line graph) of risk factors across all continents based on a selected risk factor using radio buttons.
+Another aspect of the project motivation also includes allowing users to visualize and see how the death-causing factors are changing with time. As such, the app will provide a sort of global overview to help make effective comparisons among these risk factors. This will help to figure out if the causes of death in different countries are the same every year or if they are shifting with time.
 
 ## Section 2: Description of the data
-We will be visualizing a data set of the number of deaths by risk factors of 196 countries from 1990 to 2017. The data has 6468 rows and 30 columns including the `country name`, `country code`, `year` and factors (e.g. `Unsafe water source (deaths)`, `Low birth weight (deaths)`, `Smoking (deaths)`, `High blood pressure (deaths)`, `Obesity (deaths)`, `Air pollution (outdoor & indoor) (deaths)` etc). 
+> We will be visualizing a data set of the number of deaths by risk factors of 196 countries from 1990 to 2017. The data has 6468 rows and 30 columns including the `country name`, `country code`, `year` and factors (e.g. `Unsafe water source (deaths)`, `Low birth weight (deaths)`, `Smoking (deaths)`, `High blood pressure (deaths)`, `Obesity (deaths)`, `Air pollution (outdoor & indoor) (deaths)` etc). 
 
-(The data has been approved by Firas. The data was published by "Global Burden of Disease Collaborative Network. Global Burden of Disease Study 2017 (GBD 2017) Results. Seattle, United States: Institute for Health Metrics and Evaluation (IHME), 2018". It could be downloaded [here](https://ourworldindata.org/air-pollution).) 
+> (The data has been approved by Firas. The data was published by "Global Burden of Disease Collaborative Network. Global Burden of Disease Study 2017 (GBD 2017) Results. Seattle, United States: Institute for Health Metrics and Evaluation (IHME), 2018". It could be downloaded [here](https://ourworldindata.org/air-pollution).) 
 
 ## Section 3: Research questions and usage scenarios
