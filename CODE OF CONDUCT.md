@@ -9,7 +9,7 @@
 7. Avoidance of unwelcoming and exclusive language
 8. Focusing on what is best for the group
 
-## Behaviours to be Avoided
+## Unacceptable Behaviours
 1. Use of derogatory comments and offensive language
 2. Pushing personal ideas or views or personal attacks
 3. Harrassment of team members
