@@ -119,6 +119,10 @@ In the above example, column names are specified using backticks. Remember if yo
 
 Another example of a good description of a dataset can be found [here](https://www.kaggle.com/unsdsn/world-happiness) for the World Happiness Report dataset on Kaggle.
 
+> We will be visualizing a data set of the number of deaths by risk factors of 196 countries from 1990 to 2017. The data has 6468 rows and 30 columns including the `country name`, `country code`, `year` and factors (e.g. `Unsafe water source (deaths)`, `Low birth weight (deaths)`, `Smoking (deaths)`, `High blood pressure (deaths)`, `Obesity (deaths)`, `Air pollution (outdoor & indoor) (deaths)` etc). 
+
+(p.s. Data got approved by Firas :) The data was published by "Global Burden of Disease Collaborative Network. Global Burden of Disease Study 2017 (GBD 2017) Results. Seattle, United States: Institute for Health Metrics and Evaluation (IHME), 2018". It could be downloaded [here](https://ourworldindata.org/air-pollution).) 
+
 ### Section 3: Research questions and usage scenarios
 
 The purpose of this section is to get you to think about how someone else might use the app you're going to design, and to think about those needs before you start coding. 
@@ -130,6 +134,11 @@ Usage scenarios are typically written in a narrative style and include the speci
 If you are using a Kaggle dataset, you may use their "Overview (inspiration)" to create your usage scenario, or you may come up with your own inspiration.
 
 An example usage scenario with tasks (tasks are indicated in brackets, i.e. [task])
+
+> What's the top 5 risk factors that caused the largest amount number of death in 2017?
+> What's these risk factors look like among coutries in 2017?
+> What's the trend of these risk factors over time by continents?
+
 
 > Mary is a policy maker with the Canadian Ministry of Health and she wants to understand what factors lead to missed appointments in order to devise an intervention that improves attendance numbers. 
 She wants to be able to [explore] a dataset in order to [compare] the effect of different variables on absenteeism and [identify] the most relevant variables around which to frame her intervention policy. 
@@ -160,9 +169,9 @@ Example description
 **Example sketch**
 
 The example sketch shows the visual design of the app and one interactive feature (a tooltip).
-
-![dashBoard](AppSketch.png "App Sketch")
-
+```{python}
+#![dashBoard](AppSketch.png "App Sketch")
+```
 *A further note on the app sketches:* 
 
 I've choosen to draw up my sketch using Powerpoint and using icons from the [noun project](https://thenounproject.com/). You can use others graphics tools (i.e. Photoshop, Illustrator, GIMP, or Inkscape, etc.) or you can even draw you app by hand and upload the scanned version of your drawing. Whatever you choose to do, make sure that the final image in your report is legible. Please note, this is a very basic illustrative guide to help you in this milestone, it is by no means the limit of what you should submit. 
