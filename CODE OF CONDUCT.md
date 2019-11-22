@@ -1,5 +1,5 @@
 # Code of Conduct
-## Acceptable Behaiviours
+## Acceptable Behaviours
 1. Teamwork and collaboration
 2. Respect for each others' opinions and suggestions
 3. No last minute rushing of work
