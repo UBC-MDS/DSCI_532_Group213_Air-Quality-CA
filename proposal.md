@@ -10,3 +10,26 @@ Another aspect of the project motivation also includes allowing users to visuali
 > (The data has been approved by Firas. The data was published by "Global Burden of Disease Collaborative Network. Global Burden of Disease Study 2017 (GBD 2017) Results. Seattle, United States: Institute for Health Metrics and Evaluation (IHME), 2018". It could be downloaded [here](https://ourworldindata.org/air-pollution).) 
 
 ## Section 3: Research questions and usage scenarios
+
+In general, in a population of 1000 individuals, there is an approximate 9.5 death per year in that population. That is, the general death rate is 0.95% per year.$^1$  In 2017, the crude death rate is approximate 0.83% around the world according to CIA Work Factbook.$^2$  This is less than 1%, but what if we convert it to an actual number? According to the World Bank database, the world population is approximately 7.5 billion in the year 2017.$^3$ Based on the crude death rate, the number of death in 2017 is approximately 62.225 million in the world. That is a huge number.
+ 
+Our dashboard will be developed to answer the following **research questions**:
+
+- What's the top 5 risk factors that caused the largest amount number of death in 2017?
+- What's these risk factors look like among countries in 2017?
+- What's the trend of these risk factors over time by continents?
+ 
+**Usage scenario**
+ 
+Morty is an employee in the Work Bank and he wants to understand what risk factors that would cause a large amount of death in recent years and the influence of those factors around the world. With that information, he can write a report so that people will pay attention to those risk factors. He wants to explore the death factors and compare the number of death caused by the most dangerous death factors in different regions around the world.
+ 
+When he logs into the app, he will see an overview of the total number of death caused by each factor in 2017. The plot is ranked in descending order. He might notice that “High blood pressure” caused the highest number of death around the world. When he clicks the second button, “World’s Death Rate”, he will see how does the number of death caused by high blood pressure distributed among countries that year. He might find out that some regions or continents have a much higher death rate caused by that factor. If he clicks the third button, “Death Trend”, he can see whether the death rate by that factor is getting better over the years, and also compare the trend of different continents. He can also look at the same information for other high-frequency death factors by using the drop-down menu and radio buttons in the app.
+ 
+After going through the dashboard, he can further research why does a risk factor keeps occur and increase in certain regions and how to prevent or reduce it. 
+
+## Resources:
+1. [Wikipedia.**Mortality Rate**](https://en.wikipedia.org/wiki/Mortality_rate)
+
+2. [World Factbook. **Dearth Rate in 2017**](https://www.cia.gov/library/publications/the-world-factbook/rankorder/2066rank.html)
+
+3. [World Bank. **Population Total**](https://data.worldbank.org/indicator/sp.pop.totl)
