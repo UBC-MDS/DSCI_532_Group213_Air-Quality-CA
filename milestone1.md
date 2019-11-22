@@ -172,6 +172,10 @@ The example sketch shows the visual design of the app and one interactive featur
 ```{python}
 #![dashBoard](AppSketch.png "App Sketch")
 ```
+
+![App feature 1](img/app_feature1.png)
+![App feature 2](img/app_feature2.png)
+![App feature 3](img/app_feature3.png)
 *A further note on the app sketches:* 
 
 I've choosen to draw up my sketch using Powerpoint and using icons from the [noun project](https://thenounproject.com/). You can use others graphics tools (i.e. Photoshop, Illustrator, GIMP, or Inkscape, etc.) or you can even draw you app by hand and upload the scanned version of your drawing. Whatever you choose to do, make sure that the final image in your report is legible. Please note, this is a very basic illustrative guide to help you in this milestone, it is by no means the limit of what you should submit. 
