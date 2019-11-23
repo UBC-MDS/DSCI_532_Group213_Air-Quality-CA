@@ -1,5 +1,5 @@
 ## Introduction
-we are committed to creating a friendly and respectful place for learning, teaching and contributing. All participants in our course and communications are expected to show respect and courtesy to others.
+We are committed to creating a friendly and respectful place for learning, teaching and contributing. All participants in our course and communications are expected to show respect and courtesy to others.
 
 To make clear what is expected, everyone participating in this project is required to conform to the Code of Conduct. This Code of Conduct applies to all spaces including, but not limited to, in-person meetings, email communication, and online forums such as Slack and GitHub.
 
