@@ -6,6 +6,15 @@ import pandas as pd
 import altair as alt
 import json
 import geopandas as gpd
+import os
+import dash_bootstrap_components as dbc
+
+
+
+# path = '/users/sakiga/Desktop/MDS_Block3/LABS_532/Milestone1/DSCI_532_Group213_death_by_risk_factors/app'
+# os.chdir(path)
+
+factors_data = pd.read_csv('../data/clean_data_line_plot.csv')
 
 app = dash.Dash(__name__, assets_folder='assets')
 server = app.server
@@ -63,8 +72,29 @@ def draw_map(cols = 'properties.high_blood_pressure', source = choro_data):
     ).properties(width=600, height=500)
     return  p_map
 
-
 #ends
+
+
+
+selection = alt.selection_single()
+
+#line_graph function
+def line_graph(factor_name='high_blood_sugar', data=factors_data):
+    '''
+    plot the interactive line graph 
+    '''
+    line = alt.Chart(data).mark_line(point=True).add_selection(selection
+).encode(
+    alt.X("year:N", axis=alt.Axis(labelAngle=45)),
+    alt.Y("{}:Q".format(factor_name)),
+    alt.Tooltip(['year:N','continent:N', '{}:Q'.format(factor_name)]),
+    color = alt.condition(selection, 'continent:N', alt.value('grey')),
+    opacity = alt.condition(selection, alt.value(0.9), alt.value(0.2))
+).properties(
+    title="Trend of {} over time , 1990 - 2017".format(factor_name.replace("_"," ")),
+    width=600,
+    height=320)
+    return line 
 
 app.layout = html.Div([
 
@@ -75,7 +105,7 @@ app.layout = html.Div([
     html.Iframe(
         sandbox='allow-scripts',
         id='plot',
-        height='500',
+        height='600',
         width='700',
         style={'border-width': '0'},
 
@@ -102,6 +132,9 @@ app.layout = html.Div([
                    verticalAlign="middle")
         ),
 
+
+
+
     html.Iframe(
         sandbox='allow-scripts',
         id='plot_map',
@@ -113,6 +146,37 @@ app.layout = html.Div([
         srcDoc=draw_map().to_html()
         ################ The magic happens here
         ),
+    html.H2('Radio button'),
+    dcc.RadioItems(
+    id='line-fcts',
+    options=[
+            {'label': 'High blood pressure', 'value': 'high_blood_pressure'},
+            {'label': 'smoking', 'value': 'smoking'},
+            {'label': 'High blood sugar', 'value': 'high_blood_sugar'},
+            {'label': 'Air pollution outdoor & indoor', 'value': 'air_pollution_outdoor_&_indoor'},
+            {'label': 'Obesity', 'value': 'obesity'},
+            
+            # Missing option here
+        ],
+        
+        value = "high_blood_pressure",
+        labelStyle={'display': 'inline-block'}
+        ),
+
+    html.Iframe(
+        sandbox='allow-scripts',
+        id='line_plot',
+        height='600',
+        width='800',
+        style={'border-width': '0'},
+
+        ################ The magic happens here
+        srcDoc=line_graph().to_html()
+        ################ The magic happens here
+        ),
+
+
+  
         
         
 ])
@@ -129,5 +193,19 @@ def update_map(column_name):
     updated_map = draw_map(column_name).to_html()
     return updated_map  
 
+@app.callback(
+    dash.dependencies.Output('line_plot', 'srcDoc'),
+    [dash.dependencies.Input('line-fcts', 'value')])
+
+def update_line_graph(factor_name):
+    '''
+    Takes in a factor_name and calls line_graph to update the Altair figure
+    '''
+    updated_line_graph = line_graph(factor_name).to_html()
+    return updated_line_graph
+
+
+  
+ 
 if __name__ == '__main__':
     app.run_server(debug=True)
