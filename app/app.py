@@ -47,19 +47,23 @@ def draw_map(cols = 'properties.high_blood_pressure', source = choro_data):
     draw_map('properties.smoking')
     
     """
+    
     p_map = alt.Chart(source, 
-                      title = "Death percentage of {} per total death in country's population in 2017".format(cols[11:].replace('_',' '))
+                      title = "Death percentage of {} among countries in 2017".format(cols[11:].replace('_',' '))
                      ).mark_geoshape(
         fill='lightgray',
         stroke='black'
     ).encode(
         alt.Color(cols, type='quantitative', 
-                  scale=alt.Scale(scheme='yelloworangered'),
+                  scale=alt.Scale(scheme='yelloworangered'), 
                   title = "Percentage of death"),
-         tooltip = alt.Tooltip(['properties.country:O',
-                                '{}:Q'.format(cols)])
-    ).properties(width=700, height=500)
-    return p_map
+         tooltip = [alt.Tooltip('properties.country:O', title = 'country'), 
+                    alt.Tooltip('{}:Q'.format(cols), title = '{}'.format(cols[11:].replace('_',' ')), 
+                                format = ".2f")]
+    ).properties(width=600, height=500)
+    return  p_map
+
+
 #ends
 
 app.layout = html.Div([
@@ -73,7 +77,7 @@ app.layout = html.Div([
         id='plot',
         height='500',
         width='700',
-        style={'border-width': '5px'},
+        style={'border-width': '0'},
 
         ################ The magic happens here
         srcDoc=open('bar_chart.html').read()
@@ -103,7 +107,7 @@ app.layout = html.Div([
         id='plot_map',
         height='600',
         width='800',
-        style={'border-width': '5px'},
+        style={'border-width': '0'},
 
         ################ The magic happens here
         srcDoc=draw_map().to_html()
