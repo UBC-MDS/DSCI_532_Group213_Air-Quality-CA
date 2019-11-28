@@ -48,7 +48,7 @@ def draw_map(cols = 'properties.high_blood_pressure', source = choro_data):
     
     """
     p_map = alt.Chart(source, 
-                      title = "Death percentage of balablabalblabla among countries in 2017"
+                      title = "Death percentage of {} per total death in country's population in 2017".format(cols[11:].replace('_',' '))
                      ).mark_geoshape(
         fill='lightgray',
         stroke='black'
@@ -100,7 +100,7 @@ app.layout = html.Div([
 
     html.Iframe(
         sandbox='allow-scripts',
-        id='map',
+        id='plot_map',
         height='600',
         width='800',
         style={'border-width': '5px'},
@@ -115,7 +115,7 @@ app.layout = html.Div([
 
 
 @app.callback(
-    dash.dependencies.Output('map', 'srcDoc'),
+    dash.dependencies.Output('plot_map', 'srcDoc'),
     [dash.dependencies.Input('dd-chart', 'value')])
 
 def update_map(column_name):
