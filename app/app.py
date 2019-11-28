@@ -76,16 +76,20 @@ def draw_map(cols = 'properties.high_blood_pressure', source = choro_data):
 
 
 
+selection = alt.selection_single()
 
+#line_graph function
 def line_graph(factor_name='high_blood_sugar', data=factors_data):
     '''
     plot the interactive line graph 
     '''
-    line = alt.Chart(data).mark_line(point=True).encode(
+    line = alt.Chart(data).mark_line(point=True).add_selection(selection
+).encode(
     alt.X("year:N", axis=alt.Axis(labelAngle=45)),
     alt.Y("{}:Q".format(factor_name)),
-    alt.Color("continent:N", title="Continents"),
-    alt.Tooltip(['year:N','continent:N', '{}:Q'.format(factor_name)])
+    alt.Tooltip(['year:N','continent:N', '{}:Q'.format(factor_name)]),
+    color = alt.condition(selection, 'continent:N', alt.value('grey')),
+    opacity = alt.condition(selection, alt.value(0.9), alt.value(0.2))
 ).properties(
     title="Trend of {} over time , 1990 - 2017".format(factor_name.replace("_"," ")),
     width=600,
@@ -101,7 +105,7 @@ app.layout = html.Div([
     html.Iframe(
         sandbox='allow-scripts',
         id='plot',
-        height='500',
+        height='600',
         width='700',
         style={'border-width': '0'},
 
