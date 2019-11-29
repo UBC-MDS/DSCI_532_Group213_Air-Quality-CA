@@ -35,7 +35,7 @@ df1 = df.query("year == 2017")
 df1.drop(['country'], axis =1 ,inplace = True)
 geo_df = gdf.merge(df1, left_on = 'country_code', right_on = 'code')
 geo_df.drop(['code'], axis =1 ,inplace = True)
-geo_df.iloc[:,4:] = geo_df.iloc[:,4:].div(geo_df.iloc[:,4:].sum(axis=1), axis=0) * 100
+geo_df.iloc[:,4:] = geo_df.iloc[:,4:].div(geo_df.iloc[:,4:].sum(axis=1), axis=0)
 # convert to json file
 choro_json = json.loads(geo_df.to_json())
 choro_data = alt.Data(values=choro_json['features'])
@@ -58,17 +58,17 @@ def draw_map(cols = 'properties.high_blood_pressure', source = choro_data):
     """
     
     p_map = alt.Chart(source, 
-                      title = "Death percentage of {} among countries in 2017".format(cols[11:].replace('_',' '))
+                      title = "Death percentage of {} over total death among countries in 2017".format(cols[11:].replace('_',' '))
                      ).mark_geoshape(
         fill='lightgray',
         stroke='black'
     ).encode(
         alt.Color(cols, type='quantitative', 
                   scale=alt.Scale(scheme='yelloworangered'), 
-                  title = "Percentage of death"),
+                  title = "Proportion of death"),
          tooltip = [alt.Tooltip('properties.country:O', title = 'country'), 
                     alt.Tooltip('{}:Q'.format(cols), title = '{}'.format(cols[11:].replace('_',' ')), 
-                                format = ".2f")]
+                                format = ".2%")]
     ).properties(width=600, height=500)
     return  p_map
 
