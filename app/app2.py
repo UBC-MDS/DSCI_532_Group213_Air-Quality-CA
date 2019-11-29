@@ -125,7 +125,8 @@ app.layout = html.Div([
                     {'label': 'Obesity', 'value': 'properties.obesity'},
                 
                 ],
-                value='properties.high_blood_pressure', #setting default value
+                value='properties.high_blood_pressure', 
+                clearable=False,
                 style=dict(width='45%',
                         verticalAlign="middle")
             ),
