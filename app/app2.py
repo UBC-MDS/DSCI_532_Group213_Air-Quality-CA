@@ -97,7 +97,7 @@ def line_graph(factor_name='high_blood_sugar', data=factors_data):
 #layout starts
 app.layout = html.Div([
     dcc.Tabs([
-        dcc.Tab(label='Tab one', children=[
+        dcc.Tab(label='Overview', children=[
             html.Iframe(
             sandbox='allow-scripts',
             id='plot',
@@ -110,7 +110,7 @@ app.layout = html.Div([
             ################ The magic happens here
             ),
         ]),
-        dcc.Tab(label='Tab two', children=[
+        dcc.Tab(label='World Spread', children=[
            dcc.Dropdown(
             id='dd-chart',
             options=[
@@ -138,7 +138,7 @@ app.layout = html.Div([
                 ################ The magic happens here
             ),
         ]),
-        dcc.Tab(label='Tab three', children=[
+        dcc.Tab(label='Trend', children=[
             dcc.RadioItems(
             id='line-fcts',
             options=[
@@ -165,8 +165,13 @@ app.layout = html.Div([
                 srcDoc=line_graph().to_html()
                 ################ The magic happens here
                 ),
-        ]),
-    ])
+        ])
+    ], colors={
+            "border": "white",
+            "primary": "gold",
+            "background": "cornsilk"
+        }),
+        html.Div(id='tabs-content-props')
 ], style={'textAlign':'center'})
 
 
