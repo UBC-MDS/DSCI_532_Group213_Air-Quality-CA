@@ -56,7 +56,7 @@ def draw_map(cols = 'properties.high_blood_pressure', source = choro_data):
     """
     
     p_map = alt.Chart(source, 
-                      title = "Death percentage of {} over total death among countries in 2017".format(cols[11:].replace('_',' '))
+                      title = "Global death percentage of {} over total death in 2017".format(cols[11:].replace('_',' '))
                      ).mark_geoshape(
         fill='lightgray',
         stroke='black'
@@ -67,7 +67,7 @@ def draw_map(cols = 'properties.high_blood_pressure', source = choro_data):
          tooltip = [alt.Tooltip('properties.country:O', title = 'country'), 
                     alt.Tooltip('{}:Q'.format(cols), title = '{}'.format(cols[11:].replace('_',' ')), 
                                 format = ".2%")]
-    ).properties(width=800, height=500)
+    ).properties(width=800, height=450).configure_title(fontSize=25)
     return  p_map
 
 #ends
@@ -90,8 +90,8 @@ def line_graph(factor_name='high_blood_sugar', data=factors_data):
     opacity = alt.condition(selection, alt.value(0.9), alt.value(0.2))
 ).properties(
     title="Trend of {} over time , 1990 - 2017".format(factor_name.replace("_"," ")),
-    width=600,
-    height=320)
+    width=800,
+    height=350).configure_title(fontSize=25)
     return line 
 
 #layout starts
@@ -129,8 +129,8 @@ app.layout = html.Div([
             html.Iframe(
                 sandbox='allow-scripts',
                 id='plot_map',
-                height='600',
-                width='1000',
+                height='500',
+                width='1100',
                 style={'border-width': '0'},
 
                 ################ The magic happens here
@@ -143,8 +143,8 @@ app.layout = html.Div([
             html.Iframe(
                 sandbox='allow-scripts',
                 id='line_plot',
-                height='450',
-                width='800',
+                height='500',
+                width='1000',
                 style={'border-width': '0'},
 
                 ################ The magic happens here
