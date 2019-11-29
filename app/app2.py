@@ -84,7 +84,7 @@ def line_graph(factor_name='high_blood_sugar', data=factors_data):
     line = alt.Chart(data).mark_line(point=True).add_selection(selection
 ).encode(
     alt.X("year:N", axis=alt.Axis(labelAngle=45)),
-    alt.Y("{}:Q".format(factor_name)),
+    alt.Y("{}:Q".format(factor_name),title="{}".format(factor_name.replace('_',' '))),
     alt.Tooltip(['year:N','continent:N', '{}:Q'.format(factor_name)]),
     color = alt.condition(selection, 'continent:N', alt.value('grey')),
     opacity = alt.condition(selection, alt.value(0.9), alt.value(0.2))
@@ -139,6 +139,19 @@ app.layout = html.Div([
             ),
         ]),
         dcc.Tab(label='Trend', children=[
+
+            html.Iframe(
+                sandbox='allow-scripts',
+                id='line_plot',
+                height='450',
+                width='800',
+                style={'border-width': '0'},
+
+                ################ The magic happens here
+                srcDoc=line_graph().to_html()
+                ################ The magic happens here
+                ),
+
             dcc.RadioItems(
             id='line-fcts',
             options=[
@@ -154,17 +167,6 @@ app.layout = html.Div([
                 labelStyle={'display': 'inline-block'}
                 ),
 
-            html.Iframe(
-                sandbox='allow-scripts',
-                id='line_plot',
-                height='600',
-                width='800',
-                style={'border-width': '0'},
-
-                ################ The magic happens here
-                srcDoc=line_graph().to_html()
-                ################ The magic happens here
-                ),
         ])
     ], colors={
             "border": "white",
