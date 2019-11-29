@@ -91,7 +91,11 @@ def line_graph(factor_name='high_blood_sugar', data=factors_data):
 ).properties(
     title="Trend of {} over time , 1990 - 2017".format(factor_name.replace("_"," ")),
     width=800,
-    height=350).configure_title(fontSize=25)
+    height=350).configure_title(fontSize=25
+    ).configure_axis(
+    labelFontSize=15,
+    titleFontSize=20
+)
     return line 
 
 #layout starts
@@ -102,11 +106,11 @@ app.layout = html.Div([
             sandbox='allow-scripts',
             id='plot',
             height='600',
-            width='700',
+            width='950',
             style={'border-width': '0'},
 
             ################ The magic happens here
-            srcDoc=open('bar_chart.html').read()
+            srcDoc=open('../script/bar_chart.html').read()
             ################ The magic happens here
             ),
         ]),
