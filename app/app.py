@@ -101,29 +101,25 @@ def line_graph(factor_name='high_blood_sugar', data=factors_data):
     titleFontSize=20
 )
     return line 
-
+jumbotron = dbc.Jumbotron(
+    [
+        dbc.Container(
+            [
+                html.H1("Worldwide Death Risk Factors", className="display-3"),
+                html.P('This app explores the various death causing risk factors globally, geographically in 2017 and the trends of the top five risk factors over years across continents.', style = {'textAlign':'left'}),
+                html.P('- The Overview tab gives an interactive visualization of the proportion in which the various death causing factors contribute to total death observed globally.', style = {'textAlign':'left'}),
+                html.P('- World Spread tab demonstrates the geographic distribution of risk factors using geo maps or choropleth.', style = {'textAlign':'left'}),
+                html.P('- Trends tab shows the trends of top five risk factors of deaths across all continents from 1990 up to 2017.', style = {'textAlign':'left'})
+            ],
+            fluid=True,
+        )
+    ],
+    fluid=True,
+)
 #layout starts
-app.layout = html.Div([
+app.layout = html.Div([jumbotron,
     dcc.Tabs([
-        dcc.Tab(label='Description', children=[
-            # html.Iframe(
-            # sandbox='allow-scripts',
-            # id='intro',
-            # height='600',
-            # width='950',
-            # style={'border-width': '0'},
-
-            # ################ The magic happens here
-            # srcDoc=open('../script/Intro.html').read()
-            # ################ The magic happens here
-            # ),
-            html.H2('This app explores the various death causing risk factors globally, geographically in 2017 and the trends of the top five risk factors over years across continents.', style = {'textAlign':'left'}),
-            html.H2('- The Overview tab gives an interactive visualization of the proportion in which the various death causing factors contribute to total death observed globally.', style = {'textAlign':'left'}),
-            html.H2('- World Spread tab demonstrates the geographic distribution of risk factors using geo maps or choropleth.', style = {'textAlign':'left'}),
-            html.H2('- Trends tab shows the trends of top five risk factors of deaths across all continents from 1990 up to 2017.', style = {'textAlign':'left'}),
-            html.H3('Data source: "Institute for Health Metrics and Evaluation (IHME), 2018".', style = {'textAlign':'left'}),
-
-        ]),
+        
         dcc.Tab(label='2017 Overview', children=[
             html.Iframe(
             sandbox='allow-scripts',
@@ -159,7 +155,7 @@ app.layout = html.Div([
             html.Iframe(
                 sandbox='allow-scripts',
                 id='plot_map',
-                height='500',
+                height='520',
                 width='1100',
                 style={'border-width': '0'},
 
