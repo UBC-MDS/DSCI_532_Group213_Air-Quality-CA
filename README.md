@@ -3,9 +3,10 @@
 
 The application has been designed in an interactive three-tab dash container that enhanced visibility and user-friendliness. The key functionalities of this application were built upon the three research questions in milestone1 which are below for reference.
 
-What are the top 5 risk factors that caused the largest number of deaths in 2017?
-How do these risk factors compare among countries in 2017?
-What's the trend of these risk factors over time for continents?
+- What are the top 5 risk factors that caused the largest number of deaths in 2017?
+- How do these risk factors compare among countries in 2017?
+- What's the trend of these risk factors over time for continents?
+
 The app has three tabs namely Overview, World Spread and Trend.
 The Overview gives an interactive visualization of the proportion in which the various death_causing factors contribute to total death observed globally. This is shown in an interactive bar chart that the user can click on any feature and see the details displayed by the tooltip feature. This overview is for the year 2017 and the user can easily see the top 5 risk factors that caused the largest number of deaths in 2017.
 
