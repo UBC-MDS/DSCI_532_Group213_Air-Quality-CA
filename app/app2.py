@@ -72,11 +72,15 @@ def draw_map(cols = 'properties.high_blood_pressure', source = choro_data):
 
 #ends
 
-
+#wrangling for line plot
+factors_data.iloc[:,2:] = factors_data.iloc[:,2:]/1_000_000
+#end
 
 selection = alt.selection_single()
 
 #line_graph function
+selection = alt.selection_single();
+
 def line_graph(factor_name='high_blood_sugar', data=factors_data):
     '''
     plot the interactive line graph 
@@ -84,8 +88,10 @@ def line_graph(factor_name='high_blood_sugar', data=factors_data):
     line = alt.Chart(data).mark_line(point=True).add_selection(selection
 ).encode(
     alt.X("year:N", axis=alt.Axis(labelAngle=45)),
-    alt.Y("{}:Q".format(factor_name),title="{}".format(factor_name.replace('_',' '))),
-    alt.Tooltip(['year:N','continent:N', '{}:Q'.format(factor_name)]),
+    alt.Y("{}:Q".format(factor_name),title="Number of death (in million)"),
+    tooltip = ['year:N','continent:N', 
+               alt.Tooltip('{}:Q'.format(factor_name), format = ".2f",
+                          title="Number of death (in million)")],
     color = alt.condition(selection, 'continent:N', alt.value('grey')),
     opacity = alt.condition(selection, alt.value(0.9), alt.value(0.2))
 ).properties(
