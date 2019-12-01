@@ -6,13 +6,12 @@ import pandas as pd
 import altair as alt
 import json
 import geopandas as gpd
-import os
 import dash_bootstrap_components as dbc
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-factors_data = pd.read_csv('../data/clean_data_line_plot.csv')
+factors_data = pd.read_csv('data/clean_data_line_plot.csv')
 
 app = dash.Dash(__name__, assets_folder='assets')
 server = app.server
@@ -20,11 +19,11 @@ server = app.server
 app.title = 'Dash app with pure Altair HTML'
 
 ##wrangling for map
-df = pd.read_csv("../data/clean_number-of-deaths-by-risk-factor.csv")
+df = pd.read_csv("data/clean_number-of-deaths-by-risk-factor.csv")
 
 #source: https://www.naturalearthdata.com/downloads/110m-cultural-vectors/
 #source:https://towardsdatascience.com/a-complete-guide-to-an-interactive-geographical-map-using-python-f4c5197e23e0
-shapefile = '../data/geographic_data/ne_110m_admin_0_countries.shp'
+shapefile = 'data/geographic_data/ne_110m_admin_0_countries.shp'
 gdf = gpd.read_file(shapefile)[['ADMIN', 'ADM0_A3', 'geometry']]
 gdf.columns = ['country', 'country_code', 'geometry']
 gdf.head()
@@ -129,7 +128,7 @@ app.layout = html.Div([jumbotron,
             style={'border-width': '0'},
 
             ################ The magic happens here
-            srcDoc=open('../script/bar_chart.html').read()
+            srcDoc=open('script/bar_chart.html').read()
             ################ The magic happens here
             ),
 
