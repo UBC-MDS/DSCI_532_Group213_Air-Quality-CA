@@ -1,5 +1,6 @@
 # DSCI_532_Group213_death_by_risk_factors
-A Python dashboard by Shiying Wang, Shangjing Hu and Sakariya Aynashe.
+A Python dashboard by Shiying Wang, Shangjing Hu and Sakariya Aynashe. The link of the app is [here](https://risk-factors-of-death-2.herokuapp.com/)
+
 
 ## Deployed App Functionality
 
