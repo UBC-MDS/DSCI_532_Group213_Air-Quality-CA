@@ -88,7 +88,7 @@ def line_graph(factor_name = 'high_blood_pressure', data = factors_data):
     line = alt.Chart(data).mark_line(point=True).add_selection(selection
 ).encode(
     alt.X("year:N", axis=alt.Axis(labelAngle=45)),
-    alt.Y("{}:Q".format(factor_name),title="Percentage of death over total death",
+    alt.Y("{}:Q".format(factor_name),title="Death % over the total death in the continent",
           axis=alt.Axis(format='%') ),
     tooltip = ['year:N','continent:N', 
                alt.Tooltip('{}:Q'.format(factor_name), format = ".2%",
