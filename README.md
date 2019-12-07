@@ -9,13 +9,12 @@ The [death factors app](https://risk-factors-of-death.herokuapp.com) has been de
 - How do these risk factors compare among countries in 2017?
 - What's the trend of these risk factors over time for continents?
 
-The app has three tabs namely Overview, World Spread and Trend.
-The Overview gives an interactive visualization of the proportion in which the various death_causing factors contribute to total death observed globally. This is shown in an interactive bar chart that the user can click on any feature and see the details displayed by the tooltip feature. This overview is for the year 2017 and the user can easily see the top 5 risk factors that caused the largest number of deaths in 2017.
+The app has three tabs namely "2017 Overview", "2017 World Spread" and Trend.
+The “2017 Overview” gives an interactive visualization of the proportion in which the various death_causing factors contribute to total death observed globally. This is shown in an interactive bar chart that the user can click on any feature and see the details displayed by the tooltip feature. This overview is for the year 2017 and the user can easily see the top 5 risk factors that caused the largest number of deaths in 2017.
 
-The second feature World Spread is more advanced as it demonstrates the geographic distribution of risk factors using geo maps or choropleth. This has three interactive features combined. The user can select any risk factor of interest from a dropdown menu. The user can then hover the mouse over any country and a tooltip will display the percentage of deaths caused by that particular feature. The colours of countries will also interactively change to reflect the percentage of death indicated by the legend.
+The second feature “2017 World Spread” is more advanced as it demonstrates the geographic distribution of risk factors using geo maps or choropleth. This has three interactive features combined. The user can select any risk factor of interest from a dropdown menu. The user can then hover the mouse over any country and a tooltip will display the percentage of deaths caused by that particular feature. The colours of countries will also interactively change to reflect the percentage of death indicated by the legend.
 
-The third feature Trend adds further interactivity to the application. It shows the trends of deaths across all continents from 1990 up to 2017. This is an interactive line graph with line selection and brushing features added that get activated upon clicking a specific line graph.
-There are also radio buttons for the Trend feature that allows users to choose whichever risk factor they might want to see its change over the years and across continents.
+The third feature “Trend” adds further interactivity to the application. It shows the trends of deaths across all continents from 1990 up to 2017. This is an interactive line graph with line selection and brushing features added that get activated upon clicking a specific line graph. There are also radio buttons for the Trend feature that allows users to choose whichever risk factor they might want to see its change over the years and across continents.
 
 ## App Description
 
